@@ -42,7 +42,7 @@ export const processPayment = createAsyncThunk(
     const success = Math.random() > 0.2;
 
     if (success) {
-      const response = await axios.patch(`${API_BASE_URL}/transactions/${transactionId}`, {
+      const response = await axios.patch(`${createApiConfig().baseURL}/transactions/${transactionId}`, {
         status: 'success'
       });
       return response.data;
